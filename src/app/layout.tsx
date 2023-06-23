@@ -1,18 +1,26 @@
 import { ReactNode } from 'react'
+import { Metadata } from 'next'
 import './globals.css'
-import { Inter } from 'next/font/google'
+import { Saira } from 'next/font/google'
+import { Header } from '@/components'
 
-const inter = Inter({ subsets: ['latin'] })
+const saira = Saira({
+  weight: ['300', '400', '500', '600'],
+  subsets: ['latin'],
+})
 
-export const metadata = {
-  title: 'Capputeeno ☕',
+export const metadata: Metadata = {
+  title: 'Capputeeno',
   description: 'Powered by well dev',
 }
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="pt-BR">
-      <body className={inter.className}>{children}</body>
+      <body className={saira.className}>
+        <Header />
+        {children}
+      </body>
     </html>
   )
 }
