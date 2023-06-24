@@ -15,18 +15,21 @@ const CartCount = styled.span`
   border-radius: 100%;
   background: var(--delete-color);
   color: white;
-
-  :hover {
-    color: #cdcccc !important;
-  }
 `
 
 const Container = styled.div`
   position: relative;
-  transition: 0.5ms ease-out;
+  cursor: pointer;
+  transition: 0.3s ease-out all;
 
-  :hover {
-    opacity: 0.9;
+  > svg {
+    color: var(--text-dark);
+  }
+
+  &:hover {
+    > svg {
+      color: var(--text-dark-inputs);
+    }
   }
 `
 
