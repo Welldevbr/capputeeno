@@ -2,8 +2,11 @@
   --border-radius: 12px;
   --logo-color: #5D5D6D;
   --bg-secondary: #f3f5f6;
+  --bg-light: #F0F0F5;
   --text-dark: #737380;
+  --text-dark-inputs: #41414d;
   --delete-color: #DE3838;
+  --orange-low: #FFA585;
 }
 
 * {
@@ -21,5 +24,15 @@ body {
 input {
   outline: none;
   border: none;
+}
+
+ul {
+  list-style:none;
+}
+
+button {
+  border: none;
+  outline: none;
+  background: transparent;
 }
 
