@@ -28,6 +28,7 @@ const Logo = styled.a`
   font-weight: 400;
   font-size: 40px;
   line-height: 150%;
+  cursor: pointer;
 `
 
 export function Header() {

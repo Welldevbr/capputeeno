@@ -4,6 +4,7 @@
     "@rocketseat/eslint-config/react"
   ],
   "rules": {
-    "no-empty-pattern": "off"
+    "no-empty-pattern": "off",
+    "react-hooks/exhaustive-deps": "off"
   }
 }
