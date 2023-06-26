@@ -1,4 +1,4 @@
-import { UseFilter } from '@/hooks'
+import { useFilter } from '@/hooks'
 import { FilterTypes } from '@/types/FilterTypes'
 import styled from 'styled-components'
 
@@ -34,7 +34,7 @@ const FilterItem = styled.li<FilterItemProps>`
 `
 
 export function FilterByType() {
-  const { type, setType } = UseFilter()
+  const { type, setType } = useFilter()
 
   const handleChangeType = (value: FilterTypes) => {
     setType(value)

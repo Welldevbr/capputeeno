@@ -6,6 +6,9 @@ const FilterContainer = styled.div`
   display: flex;
   align-items: start;
   justify-content: space-between;
+
+  position: relative;
+  z-index: 10;
 `
 
 export function FilterBar() {

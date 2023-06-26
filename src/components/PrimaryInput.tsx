@@ -2,7 +2,10 @@ import { Search } from 'lucide-react'
 import { InputHTMLAttributes } from 'react'
 import { styled } from 'styled-components'
 
-interface InputProps extends InputHTMLAttributes<HTMLInputElement> {}
+interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+  value: string
+  handleChange: (value: string) => void
+}
 
 const PrimaryInput = styled.input`
   width: 352px;
@@ -34,7 +37,12 @@ const InputContainer = styled.div`
 export function PrimaryInputWSearchIcon(props: InputProps) {
   return (
     <InputContainer>
-      <PrimaryInput {...props} />
+      <PrimaryInput
+        onChange={(event: { target: { value: string } }) =>
+          props.handleChange(event.target.value)
+        }
+        {...props}
+      />
       <Search />
     </InputContainer>
   )

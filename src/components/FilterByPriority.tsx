@@ -1,6 +1,6 @@
 // interface FilterByPriorityProps {}
 
-import { UseFilter } from '@/hooks'
+import { useFilter } from '@/hooks'
 import { PriorityTypes } from '@/types/PriorityTypes'
 import { ChevronDown } from 'lucide-react'
 import { useState } from 'react'
@@ -67,7 +67,7 @@ const PriorityFilter = styled.ul`
 
 export function FilterByPriority() {
   const [isOpen, setIsOpen] = useState(false)
-  const { setPriority } = UseFilter()
+  const { setPriority } = useFilter()
 
   const handleOpen = () => setIsOpen((prev) => !prev)
 
