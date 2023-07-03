@@ -36,7 +36,7 @@ const FilterItem = styled.li<FilterItemProps>`
     color: black;
   }
 
-  @media (min-width: ${({ theme }) => theme.desktopDevice}) {
+  @media (min-width: ${(props) => props.theme.desktopDevice}) {
     font-size: 16px;
     line-height: 22px;
   }

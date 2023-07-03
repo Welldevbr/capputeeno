@@ -9,7 +9,7 @@ interface DefaultProviderProps {
 }
 
 const theme = {
-  desktopDevice: '768px',
+  desktopDevice: '1000px',
   mobileDevice: '500px',
 }
 

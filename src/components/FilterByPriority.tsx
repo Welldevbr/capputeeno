@@ -36,7 +36,7 @@ const FilterContainer = styled.div`
     }
   }
 
-  @media (min-width: ${({ theme }) => theme.mobileDevice}) {
+  @media (min-width: ${(props) => props.theme.mobileDevice}) {
     margin-left: 0%;
   }
 `

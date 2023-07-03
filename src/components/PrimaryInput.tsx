@@ -32,7 +32,7 @@ const PrimaryInput = styled.input`
 
 const InputContainer = styled.div`
   position: relative;
-  width: 160px;
+  width: 200px;
 
   svg {
     position: absolute;
@@ -49,14 +49,10 @@ const InputContainer = styled.div`
     }
   }
 
-  @media (min-width: ${({ theme }) => theme.desktopBreakpoint}) {
+  @media (min-width: ${(props) => props.theme.desktopDevice}) {
     width: 352px;
-  }
 
-  @media (min-width: ${({ theme }) => theme.mobileBreakpoint}) {
-    width: 250px;
-
-    svg {
+    > svg {
       right: 16px;
       width: 32px;
     }

@@ -22,19 +22,15 @@ const TagHeader = styled.header`
     gap: 12px;
   }
 
-  @media (min-width: ${({ theme }) => theme.desktopDevice}) {
+  @media (min-width: ${({ theme }) => theme.mobileDevice}) {
+    padding: 12px 24px;
+  }
+
+  @media (min-width: ${(props) => props.theme.desktopDevice}) {
     padding: 20px 160px;
 
     > div {
       gap: 25px;
-    }
-  }
-
-  @media (min-width: ${({ theme }) => theme.mobileDevice}) {
-    padding: 12px 24px;
-
-    > div {
-      gap: 20px;
     }
   }
 `
@@ -46,12 +42,12 @@ const Logo = styled.a`
   line-height: 150%;
   cursor: pointer;
 
-  @media (min-width: ${({ theme }) => theme.desktopDevice}) {
-    font-size: 40px;
-  }
-
   @media (min-width: ${({ theme }) => theme.mobileDevice}) {
     font-size: 24px;
+  }
+
+  @media (min-width: ${({ theme }) => theme.desktopDevice}) {
+    font-size: 40px;
   }
 `
 

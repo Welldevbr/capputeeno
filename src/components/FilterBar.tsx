@@ -12,7 +12,7 @@ const FilterContainer = styled.div`
   position: relative;
   z-index: 10;
 
-  @media (min-width: ${({ theme }) => theme.desktopDevice}) {
+  @media (min-width: ${(props) => props.theme.desktopDevice}) {
     flex-direction: row;
     align-items: start;
     gap: 0px;
