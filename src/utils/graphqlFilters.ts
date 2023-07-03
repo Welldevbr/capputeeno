@@ -19,9 +19,10 @@ export function getFieldByPriority(priority: PriorityTypes) {
 }
 
 export const mountQuery = (type: FilterTypes, priority: PriorityTypes) => {
-  if (type === FilterTypes.ALL && priority === PriorityTypes.POPULARITY)
+  const sortSettings = getFieldByPriority(priority)
+  if (type === FilterTypes.ALL)
     return `query {
-    allProducts(sortField: "sales", sortOrder: "DSC") {
+    allProducts(sortField: "${sortSettings.field}", sortOrder: "${sortSettings.order}") {
       id
       name
       price_in_cents
@@ -29,7 +30,7 @@ export const mountQuery = (type: FilterTypes, priority: PriorityTypes) => {
     }
   }
 `
-  const sortSettings = getFieldByPriority(priority)
+
   const categoryFilter = getCategoryByType(type)
 
   return `

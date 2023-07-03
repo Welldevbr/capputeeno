@@ -72,6 +72,7 @@ const PriorityFilter = styled.ul`
 
 export function FilterByPriority() {
   const [isOpen, setIsOpen] = useState(false)
+  const [priorityName, setPriorityName] = useState('')
   const { setPriority } = useFilter()
 
   const handleOpen = () => setIsOpen((prev) => !prev)
@@ -79,12 +80,19 @@ export function FilterByPriority() {
   const handleUpdatePriority = (value: PriorityTypes) => {
     setPriority(value)
     setIsOpen(false)
+
+    if (value === PriorityTypes.NEWS) return setPriorityName('novidades')
+    if (value === PriorityTypes.BIGGEST_PRICE)
+      return setPriorityName('maior - menor')
+    if (value === PriorityTypes.MINOR_PRICE)
+      return setPriorityName('menor -maior')
+    setPriorityName('mais vendidos')
   }
 
   return (
     <FilterContainer>
       <button onClick={handleOpen}>
-        Organizar por <ChevronDown />
+        Organizar por: {priorityName} <ChevronDown />
       </button>
 
       {isOpen && (
