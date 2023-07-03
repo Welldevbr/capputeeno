@@ -8,29 +8,58 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 }
 
 const PrimaryInput = styled.input`
-  width: 352px;
-  padding: 10px 16px;
+  width: 100%;
+  padding: 8px 16px;
   border-radius: 8px;
 
   color: var(--text-dark);
   background: var(--bg-secondary);
 
   font-family: inherit;
-  font-style: normal;
   font-weight: 400;
-  line-height: 22px;
+  font-size: 12px;
+  line-height: 20px;
+
+  @media (min-width: ${({ theme }) => theme.desktopDevice}) {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  @media (min-width: ${({ theme }) => theme.mobileDevice}) {
+    padding: 10px 16px;
+  }
 `
 
 const InputContainer = styled.div`
   position: relative;
-  width: 352px;
+  width: 160px;
 
   svg {
     position: absolute;
-    right: 20px;
+    right: 12px;
     top: 50%;
+    width: 18px;
     transform: translateY(-50%);
     color: var(--text-dark);
+    cursor: pointer;
+    transition: 0.3s all ease-out;
+
+    &:hover {
+      color: var(--orange-low);
+    }
+  }
+
+  @media (min-width: ${({ theme }) => theme.desktopBreakpoint}) {
+    width: 352px;
+  }
+
+  @media (min-width: ${({ theme }) => theme.mobileBreakpoint}) {
+    width: 250px;
+
+    svg {
+      right: 16px;
+      width: 32px;
+    }
   }
 `
 

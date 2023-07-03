@@ -10,14 +10,18 @@ const FilterList = styled.ul`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 40px;
+  gap: 16px;
+
+  @media (min-width: ${({ theme }) => theme.desktopDevice}) {
+    gap: 40px;
+  }
 `
 
 const FilterItem = styled.li<FilterItemProps>`
   text-align: center;
-  font-size: 16px;
+  font-size: 14px;
+  line-height: 20px;
   font-weight: ${({ selected }) => (selected ? '600' : '400')};
-  line-height: 22px;
   text-transform: uppercase;
   cursor: pointer;
   transition: 0.3s ease-out all;
@@ -30,6 +34,11 @@ const FilterItem = styled.li<FilterItemProps>`
 
   &:hover {
     color: black;
+  }
+
+  @media (min-width: ${({ theme }) => theme.desktopDevice}) {
+    font-size: 16px;
+    line-height: 22px;
   }
 `
 

@@ -13,22 +13,46 @@ const TagHeader = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 160px;
+  padding: 12px 20px;
 
   > div {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 25px;
+    gap: 12px;
+  }
+
+  @media (min-width: ${({ theme }) => theme.desktopDevice}) {
+    padding: 20px 160px;
+
+    > div {
+      gap: 25px;
+    }
+  }
+
+  @media (min-width: ${({ theme }) => theme.mobileDevice}) {
+    padding: 12px 24px;
+
+    > div {
+      gap: 20px;
+    }
   }
 `
 
 const Logo = styled.a`
   color: var(--logo-color);
   font-weight: 400;
-  font-size: 40px;
+  font-size: 20px;
   line-height: 150%;
   cursor: pointer;
+
+  @media (min-width: ${({ theme }) => theme.desktopDevice}) {
+    font-size: 40px;
+  }
+
+  @media (min-width: ${({ theme }) => theme.mobileDevice}) {
+    font-size: 24px;
+  }
 `
 
 export function Header() {
@@ -40,7 +64,7 @@ export function Header() {
         <PrimaryInputWSearchIcon
           value={search}
           handleChange={setSearch}
-          placeholder="Procura por algo específico?"
+          placeholder="Procurar por algo?"
         />
         <CartControl />
       </div>

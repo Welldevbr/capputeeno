@@ -10,6 +10,7 @@ const FilterContainer = styled.div`
   display: flex;
   align-items: center;
   position: relative;
+  margin-left: 50%;
 
   > button {
     font-family: inherit;
@@ -33,6 +34,10 @@ const FilterContainer = styled.div`
     &:hover {
       color: var(--text-dark-inputs);
     }
+  }
+
+  @media (min-width: ${({ theme }) => theme.mobileDevice}) {
+    margin-left: 0%;
   }
 `
 

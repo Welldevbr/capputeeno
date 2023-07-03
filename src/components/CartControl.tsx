@@ -21,14 +21,24 @@ const Container = styled.div`
   position: relative;
   cursor: pointer;
   transition: 0.3s ease-out all;
+  top: 3px;
 
   > svg {
     color: var(--text-dark);
+    width: 20px;
   }
 
   &:hover {
     > svg {
-      color: var(--text-dark-inputs);
+      color: var(--orange-low);
+    }
+  }
+
+  @media (min-width: ${({ theme }) => theme.desktopDevice}) {
+    top: 0;
+
+    > svg {
+      width: 32px;
     }
   }
 `
