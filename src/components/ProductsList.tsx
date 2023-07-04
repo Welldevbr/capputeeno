@@ -1,6 +1,7 @@
 import { useProducts } from '@/hooks/useProducts'
 import { ProductCard } from './ProductCard'
 import styled from 'styled-components'
+import { NotFound } from '.'
 
 const ListContainer = styled.div`
   display: grid;
@@ -15,18 +16,22 @@ const ListContainer = styled.div`
 
 export function ProductsList() {
   const { data } = useProducts()
-  console.log(data)
 
   return (
     <ListContainer>
-      {data?.map((product) => (
-        <ProductCard
-          key={product.id}
-          image={product.image_url}
-          title={product.name}
-          price={product.price_in_cents}
-        />
-      ))}
+      {data ? (
+        data?.map((product) => (
+          <ProductCard
+            key={product.id}
+            image={product.image_url}
+            title={product.name}
+            price={product.price_in_cents}
+            id={product.id}
+          />
+        ))
+      ) : (
+        <NotFound />
+      )}
     </ListContainer>
   )
 }
