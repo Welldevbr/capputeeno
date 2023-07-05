@@ -3,6 +3,7 @@ import { Saira_Stencil_One as SairaStencilOne } from 'next/font/google'
 import { PrimaryInputWSearchIcon } from './PrimaryInput'
 import { CartControl } from './CartControl'
 import { useFilter } from '@/hooks'
+import { useRouter } from 'next/navigation'
 
 const sairaStencil = SairaStencilOne({
   weight: ['400'],
@@ -53,6 +54,7 @@ const Logo = styled.a`
 `
 
 export function Header() {
+  const { push } = useRouter()
   const { search, setSearch } = useFilter()
   return (
     <TagHeader>
@@ -63,7 +65,7 @@ export function Header() {
           handleChange={setSearch}
           placeholder="Procurar por algo?"
         />
-        <CartControl />
+        <CartControl onClick={() => push('cart')} />
       </div>
     </TagHeader>
   )

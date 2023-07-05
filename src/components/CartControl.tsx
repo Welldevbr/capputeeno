@@ -1,23 +1,11 @@
 import { useLocalStorage } from '@/hooks/useLocalStorage'
 import { ShoppingBag } from 'lucide-react'
+import { ButtonHTMLAttributes } from 'react'
 import styled from 'styled-components'
 
-const CartCount = styled.span`
-  width: 17px;
-  height: 17px;
-  padding: 0 5px;
+interface CartCountProps extends ButtonHTMLAttributes<HTMLButtonElement> {}
 
-  margin-left: -10px;
-
-  font-size: 10px;
-  font-weight: 500;
-
-  border-radius: 100%;
-  background: var(--delete-color);
-  color: white;
-`
-
-const Container = styled.div`
+const Container = styled.button<CartCountProps>`
   position: relative;
   cursor: pointer;
   transition: 0.3s ease-out all;
@@ -43,11 +31,26 @@ const Container = styled.div`
   }
 `
 
-export function CartControl() {
-  const { value } = useLocalStorage('Card-items', [])
+const CartCount = styled.span`
+  width: 17px;
+  height: 17px;
+  padding: 0 5px;
+
+  margin-left: -10px;
+
+  font-size: 10px;
+  font-weight: 500;
+
+  border-radius: 100%;
+  background: var(--delete-color);
+  color: white;
+`
+
+export function CartControl({ ...props }: CartCountProps) {
+  const { value } = useLocalStorage('cart-items', [])
 
   return (
-    <Container>
+    <Container {...props}>
       <ShoppingBag />
       {value.length > 0 && <CartCount>{value.length}</CartCount>}
     </Container>
