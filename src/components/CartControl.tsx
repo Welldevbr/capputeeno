@@ -34,7 +34,7 @@ const Container = styled.button<CartCountProps>`
 const CartCount = styled.span`
   width: 17px;
   height: 17px;
-  padding: 0 5px;
+  padding: 2px 5px;
 
   margin-left: -10px;
 

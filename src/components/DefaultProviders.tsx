@@ -9,8 +9,8 @@ interface DefaultProviderProps {
 }
 
 const theme = {
-  desktopDevice: '1000px',
-  mobileDevice: '500px',
+  desktopDevice: '1200px',
+  mobileDevice: '568px',
 }
 
 export function DefaultProviders({ children }: DefaultProviderProps) {

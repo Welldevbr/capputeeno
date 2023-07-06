@@ -1,6 +1,6 @@
 // interface FilterByPriorityProps {}
 
-import { useFilter } from '@/hooks'
+import { useFilter } from '@/hooks/useFilter'
 import { PriorityTypes } from '@/types/PriorityTypes'
 import { ChevronDown } from 'lucide-react'
 import { useState } from 'react'

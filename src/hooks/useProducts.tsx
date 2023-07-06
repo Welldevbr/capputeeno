@@ -1,7 +1,7 @@
 import { Product } from '@/types/Product'
 import { useQuery } from '@tanstack/react-query'
 import axios, { AxiosPromise } from 'axios'
-import { useFilter } from '.'
+import { useFilter } from './useFilter'
 import { mountQuery } from '@/utils/graphqlFilters'
 import { useDeferredValue } from 'react'
 

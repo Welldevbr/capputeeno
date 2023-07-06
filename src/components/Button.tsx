@@ -3,9 +3,12 @@ import { styled } from 'styled-components'
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode
+  sucess?: boolean
 }
 
-interface ButtonWrapperProps extends ButtonHTMLAttributes<HTMLButtonElement> {}
+interface ButtonWrapperProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  variation?: boolean
+}
 
 const ButtonWraper = styled.button<ButtonWrapperProps>`
   width: 100%;
@@ -14,17 +17,17 @@ const ButtonWraper = styled.button<ButtonWrapperProps>`
   align-items: center;
   justify-content: center;
   gap: 12px;
-  background: var(--brand-blue);
+  background: ${({ variation }) =>
+    variation ? 'var(--brand-green)' : 'var(--brand-blue)'};
   border-radius: 4px;
 
-  color: var(--shapes-light);
+  color: white;
   font-size: 16px;
   font-weight: 500;
   line-height: 150%;
   text-transform: uppercase;
 
   transition: 0.3s all ease-out;
-  cursor: pointer;
 
   > svg {
     width: 24px;
@@ -36,6 +39,10 @@ const ButtonWraper = styled.button<ButtonWrapperProps>`
   }
 `
 
-export function Button({ children, ...props }: ButtonProps) {
-  return <ButtonWraper {...props}>{children}</ButtonWraper>
+export function Button({ children, sucess, ...props }: ButtonProps) {
+  return (
+    <ButtonWraper variation={sucess} {...props}>
+      {children}
+    </ButtonWraper>
+  )
 }

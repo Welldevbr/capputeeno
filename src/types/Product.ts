@@ -7,6 +7,10 @@ export interface Product {
   description?: string
 }
 
+export interface ProductInCart extends Product {
+  quantity: number
+}
+
 export interface ProductFecthResponse {
   data: {
     Product: Product

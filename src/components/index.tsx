@@ -11,4 +11,6 @@ export * from './DefaultProviders'
 export * from './Button'
 export * from './DefaultPageLayout'
 export * from './BackButton'
-export * from './NotFound';
+export * from './NotFound'
+export * from './CartItem'
+export * from './Summary'

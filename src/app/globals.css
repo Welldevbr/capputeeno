@@ -1,5 +1,4 @@
 :root {
-  --border-radius: 12px;
   --logo-color: #5D5D6D;
   --bg-secondary: #f3f5f6;
   --bg-light: #F0F0F5;
@@ -9,9 +8,12 @@
   --delete-color: #DE3838;
   --orange-low: #FFA585;
   --shapes: #DCE2E5;
+  --shapes-alt: #F3F5F6;
   --shapes-dark:  #09090a;
   --shapes-light: #f5f5fa;
   --brand-blue: #115D8C;
+  --brand-green: #61B853;
+  --border-color: #A8A8B3;
 }
 
 * {
@@ -25,11 +27,14 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 a {
   color: var(--text-dark-inputs);
-  text-decoration: none!important;
+  text-decoration: none;
 }
 
 input {
@@ -45,5 +50,6 @@ button {
   border: none;
   outline: none;
   background: transparent;
+  cursor: pointer;
 }
 
